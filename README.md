@@ -11,7 +11,7 @@ Sample ansible project to send SMS notification using [Plivo](https://www.plivo.
 
 1. Clone this repository & cd into the repository:
 
-    `$ git clone git@github.com:rohit01/ansible-plivo-example.git`
+    `$ git clone git@github.com:rohit01/ansible-plivo-example.git`  
     `$ cd ansible-plivo-example/`
 
 1. Update ansible variables in file: [roles/plivo_example/vars/main.yml](roles/plivo_example/vars/main.yml)
