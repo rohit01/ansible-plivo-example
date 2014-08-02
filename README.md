@@ -1,5 +1,4 @@
-Ansible SMS notification example using plivo
-============================================
+### Ansible SMS notification example using plivo
 
 Sample ansible project to send SMS notification using [Plivo](https://www.plivo.com). Plivo is a [newly proposed](https://github.com/ansible/ansible/pull/8408) notification module for Ansible 1.7.
 
@@ -15,7 +14,7 @@ Sample ansible project to send SMS notification using [Plivo](https://www.plivo.
     `$ git clone git@github.com:rohit01/ansible-plivo-example.git`
     `$ cd ansible-plivo-example/`
 
-1. Update ansible variables in file: [roles/plivo_example/vars/main.yml](blob/master/roles/plivo_example/vars/main.yml)
+1. Update ansible variables in file: [roles/plivo_example/vars/main.yml](roles/plivo_example/vars/main.yml)
 
     * contact_number: Phone number of person to be notified
     * plivo_number: A valid phone number in your Plivo account. If you have custom sender-id enabled, this can be any phone number.
