@@ -9,7 +9,7 @@
       - "plivo_auth_id | default(False)"
       - "plivo_auth_token | default(False)"
 
-- name: "Check if variables in role/plivo_example/var/main.yml is updated"
+- name: "Check if variables in role/plivo_example/var/main.yml are updated"
   assert: 
     that:
       - "contact_number != '<contact_number>'"
