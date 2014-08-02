@@ -14,14 +14,14 @@ Sample ansible project to send SMS notification using [Plivo](https://www.plivo.
     `$ git clone git@github.com:rohit01/ansible-plivo-example.git`  
     `$ cd ansible-plivo-example/`
 
-1. Update ansible variables in file: [roles/plivo_example/vars/main.yml](roles/plivo_example/vars/main.yml)
+2. Update ansible variables in file: [roles/plivo_example/vars/main.yml](roles/plivo_example/vars/main.yml)
 
     * contact_number: Phone number of person to be notified
     * plivo_number: A valid phone number in your Plivo account. If you have custom sender-id enabled, this can be any phone number.
     * plivo_auth_id: Login to your plivo account and find - AUTH_ID
     * plivo_auth_token: Login to your plivo account and find - AUTH_TOKEN
 
-2. Run the examples using the following command:
+3. Run the examples using the following command:
 
     `$ ansible-playbook -v -i ansible_hosts site.yml`
 
