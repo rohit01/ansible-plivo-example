@@ -1,0 +1,30 @@
+---
+# Notify if command executed on remote host is successful
+- name: "Execute a command on configured host and notify if successful"
+  raw: echo "Success. Send a notification"
+  register: echo_result
+  ignore_errors: yes
+
+- name: "If command test was successful, send SMS notification"
+  plivo:
+    dest="{{ contact_number }}"
+    src="{{ plivo_number }}"
+    text="Echo success. Standard output- {{ echo_result.stdout }}"
+    auth_id="{{ plivo_auth_id }}"
+    auth_token="{{ plivo_auth_token }}"
+  when: echo_result.rc == 0
+
+# Notify if command executed on remote host is unsuccessful
+- name: "Execute a command on configured host and notify if it failed"
+  raw: 'echo "Failed. Send a notification" && false'
+  register: echo_result
+  ignore_errors: yes
+
+- name: "If command test failed, send SMS notification"
+  plivo:
+    dest="{{ contact_number }}"
+    src="{{ plivo_number }}"
+    text="Echo failure. Standard output- {{ echo_result.stdout }}"
+    auth_id="{{ plivo_auth_id }}"
+    auth_token="{{ plivo_auth_token }}"
+  when: echo_result.rc != 0

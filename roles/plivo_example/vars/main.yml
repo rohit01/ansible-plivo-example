@@ -1,0 +1,9 @@
+# Destination phone number with country code without the '+' sign.
+contact_number: "<contact_number>"
+
+# Plivo phone number in your account with country code without the '+' sign.
+plivo_number: "<plivo_number>"
+
+# Plivo credentials - AUTH_ID and AUTH_TOKEN
+plivo_auth_id: "<plivo_auth_id>"
+plivo_auth_token: "<plivo_auth_token>"

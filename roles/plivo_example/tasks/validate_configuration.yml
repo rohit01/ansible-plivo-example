@@ -1,0 +1,28 @@
+---
+# Module to validate plivo configuration. You can add this in your playbooks
+# to achieve a basic config validation
+- name: "Check if ansible variables required for example exists"
+  assert: 
+    that:
+      - "contact_number | default(False)"
+      - "plivo_number | default(False)"
+      - "plivo_auth_id | default(False)"
+      - "plivo_auth_token | default(False)"
+
+- name: "Check if variables in role/plivo_example/var/main.yml is updated"
+  assert: 
+    that:
+      - "contact_number != '<contact_number>'"
+      - "plivo_number != '<plivo_number>'"
+      - "plivo_auth_id != '<plivo_auth_id>'"
+      - "plivo_auth_token != '<plivo_auth_token>'"
+
+- name: "Check if phone number variables are valid"
+  assert: 
+    that:
+      - "(contact_number | int()) != 0"
+      - "(plivo_number | int()) != 0"
+      - "(contact_number | length()) >= 7"
+      - "(contact_number | length()) <= 15"
+      - "(plivo_number | length()) >= 7"
+      - "(plivo_number | length()) <= 15"

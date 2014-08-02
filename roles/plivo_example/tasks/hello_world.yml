@@ -1,0 +1,9 @@
+---
+# Hello world notification example
+- name: "Send 'Hello World!' SMS to {{ contact_number }}"
+  plivo:
+    dest="{{ contact_number }}"
+    src="{{ plivo_number }}"
+    text="Hello World!"
+    auth_id="{{ plivo_auth_id }}"
+    auth_token="{{ plivo_auth_token }}"

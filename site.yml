@@ -1,0 +1,7 @@
+---
+# Example to demonstrate ansible SMS notification using plivo module
+- hosts: plivo_example
+  gather_facts: no
+
+  roles:
+    - { role: plivo_example }

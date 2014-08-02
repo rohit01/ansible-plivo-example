@@ -1,0 +1,9 @@
+---
+# Varify plivo variables
+- include: validate_configuration.yml
+
+# Hello world example
+- include: hello_world.yml
+
+# Execute commands on server and notify based on success status
+- include: echo_test.yml
